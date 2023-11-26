@@ -19,7 +19,7 @@
 
         Numbed {
             bindings = <&tog 5>;
-            key-positions = <13 14 15>;
+            key-positions = <24 38>;
         };
     };
 
@@ -37,10 +37,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                &kp I                    &kp O    &kp P     &lt 3 LEFT_BRACKET
-&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                &kp K                    &kp L    &kp SEMI  &mt RCTRL SQT
-&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                &kp COMMA                &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 SPACE  &mt RIGHT_GUI ENTER  &mt RIGHT_ALT BACKSPACE
+&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y         &kp U                        &kp I                    &kp O    &kp P     &lt 3 LEFT_BRACKET
+&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H         &kp J                        &kp K                    &kp L    &kp SEMI  &mt RCTRL SQT
+&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N         &kp M                        &kp COMMA                &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 RETURN  &mt RIGHT_COMMAND RG(RA(C))  &mt RIGHT_ALT BACKSPACE
             >;
         };
 
@@ -52,10 +52,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans           &trans       &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans  &trans
-                                              &trans        &trans          &trans       &trans    &trans    &trans
+&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7         &kp N8         &kp N9     &kp N0  &trans
+&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans  &trans
+&trans           &trans       &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans         &trans         &trans     &trans  &trans
+                                              &trans        &trans          &trans       &trans    &kp RG(RA(X))  &kp BACKSPACE
             >;
         };
 
