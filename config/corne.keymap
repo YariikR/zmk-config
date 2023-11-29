@@ -23,7 +23,7 @@
         };
 
         Caps_Lock {
-            bindings = <&caps_word>;
+            bindings = <&kp CLCK>;
             key-positions = <12 23>;
         };
 
@@ -81,10 +81,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0         &trans
-&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp RA(RG(C))  &kp RA(RG(X))
-&trans           &kp GLOBE    &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans         &trans
-                                              &trans        &trans          &trans       &trans    &trans    &trans
+&kp LG(GRAVE)    &kp N1                                &kp N2          &kp N3        &kp N4          &kp N5       &kp N6         &kp N7    &kp N8  &kp N9     &kp N0         &trans
+&kp LS(LC(TAB))  &kp LC(TAB)                           &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &kp RA(RG(C))  &kp RA(RG(X))
+&trans           &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans         &trans    &trans  &trans     &trans         &trans
+                                                                       &trans        &trans          &trans       &kp BACKSPACE  &trans    &trans
             >;
         };
 
@@ -114,7 +114,7 @@
 
         System {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp K_POWER
+&trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
 &trans  &kp F4  &kp F5  &kp F6  &kp F12  &trans     &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &trans
 &trans  &kp F1  &kp F2  &kp F3  &trans   &trans     &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &test_macro
                         &trans  &trans   &trans     &trans          &trans                &trans
@@ -126,7 +126,7 @@
 &kp COMMA     &kp N7  &kp N8  &kp N9  &kp EQUAL  &trans             &trans  &trans  &trans  &trans  &trans  &trans
 &kp PERIOD    &kp N4  &kp N5  &kp N6  &kp PLUS   &kp KP_MULTIPLY    &trans  &trans  &trans  &trans  &trans  &trans
 &kp NUMBER_0  &kp N1  &kp N2  &kp N3  &kp MINUS  &kp FSLH           &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans  &trans     &trans             &trans  &trans  &trans
+                              &trans  &trans     &lt 1 SPACE        &trans  &trans  &trans
             >;
         };
     };
