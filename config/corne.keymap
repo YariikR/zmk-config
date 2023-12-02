@@ -41,6 +41,11 @@
             bindings = <&bt BT_SEL 2>;
             key-positions = <28 29>;
         };
+
+        Right_To_Left {
+            bindings = <&tog 6>;
+            key-positions = <2 3>;
+        };
     };
 
     behaviors {
@@ -66,10 +71,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y            &kp U                    &kp I          &kp O    &kp P                   &lt 3 LEFT_BRACKET
-&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H            &kp J                    &kp K          &kp L    &mt RIGHT_CONTROL SEMI  &kp SQT
-&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N            &kp M                    &kp COMMA      &kp DOT  &kp FSLH                &kp RIGHT_SHIFT
-                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 BACKSPACE  &mt RIGHT_COMMAND ENTER  &kp RIGHT_ALT
+&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 3 LEFT_BRACKET
+&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
+&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
             >;
         };
 
@@ -81,10 +86,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1                                &kp N2          &kp N3        &kp N4          &kp N5       &kp N6         &kp N7    &kp N8  &kp N9     &kp N0         &trans
-&kp LS(LC(TAB))  &kp LC(TAB)                           &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &kp RA(RG(C))  &kp RA(RG(X))
-&trans           &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans         &trans    &trans  &trans     &trans         &trans
-                                                                       &trans        &trans          &trans       &kp BACKSPACE  &trans    &trans
+&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7         &kp N8  &kp N9     &kp N0  &trans
+&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN       &kp UP  &kp RIGHT  &trans  &trans
+&trans           &trans       &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans         &trans  &trans     &trans  &trans
+                                              &trans        &trans          &trans       &trans    &kp BACKSPACE  &trans
             >;
         };
 
@@ -97,7 +102,7 @@
 
             bindings = <
 &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-&kp TILDE  &kp LBKT  &kp RBKT  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &trans           &kp LBRC  &kp RBRC  &trans
+&kp TILDE  &kp LBKT  &kp RBKT  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT
 &trans     &trans    &trans    &trans    &trans    &trans       &kp UNDER  &kp PLUS   &trans           &trans    &kp BSLH  &kp PIPE
                                &trans    &trans    &trans       &trans     &trans     &trans
             >;
@@ -114,10 +119,10 @@
 
         System {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
-&trans  &kp F4  &kp F5  &kp F6  &kp F12  &trans     &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &trans
-&trans  &kp F1  &kp F2  &kp F3  &trans   &trans     &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &test_macro
-                        &trans  &trans   &trans     &trans          &trans                &trans
+&trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11        &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
+&trans  &kp F4  &kp F5  &kp F6  &kp F12  &trans         &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &kp C_SLEEP
+&trans  &kp F1  &kp F2  &kp F3  &trans   &key_repeat    &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &kp C_AC_HOME
+                        &trans  &trans   &trans         &trans          &trans                &trans
             >;
         };
 
@@ -127,6 +132,15 @@
 &kp PERIOD    &kp N4  &kp N5  &kp N6  &kp PLUS   &kp KP_MULTIPLY    &trans  &trans  &trans  &trans  &trans  &trans
 &kp NUMBER_0  &kp N1  &kp N2  &kp N3  &kp MINUS  &kp FSLH           &trans  &trans  &trans  &trans  &trans  &trans
                               &trans  &trans     &trans             &trans  &trans  &trans
+            >;
+        };
+
+        Right_Side {
+            bindings = <
+&trans  &kp Y  &kp U  &kp I   &kp O   &kp P     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp H  &kp J  &kp K   &kp L   &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N  &kp M  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
