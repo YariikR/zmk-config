@@ -19,7 +19,7 @@
 
         Numbed {
             bindings = <&tog 5>;
-            key-positions = <14 15>;
+            key-positions = <12 13>;
         };
 
         Caps_Lock {
@@ -44,7 +44,7 @@
 
         Right_To_Left {
             bindings = <&tog 6>;
-            key-positions = <2 3>;
+            key-positions = <0 1>;
         };
     };
 
@@ -52,12 +52,6 @@
     };
 
     macros {
-        test_macro: test_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp LS(I) &kp T &kp SQT &kp S &kp SPACE &kp J &kp U &kp S &kp T &kp SPACE &kp A &kp SPACE &kp T &kp E &kp S &kp T &kp SPACE &kp M &kp A &kp C &kp R &kp O &kp EXCL>;
-            label = "TEST_MACRO";
-        };
     };
 
     keymap {
