@@ -47,46 +47,14 @@
             bindings = <&tog 6>;
             key-positions = <0 1>;
         };
-
-        vim_toggle {
-            bindings = <&tog 7>;
-            key-positions = <10 11>;
-        };
     };
 
     behaviors {
-        vim_d: vim_d {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_D";
-            bindings = <&kp RG(X)>, <&kp RC(K)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
-        vim_s: vim_s {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_S";
-            bindings = <&kp DELETE>, <&vim_S>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
-        };
-
-        vim_gg: vim_gg {
+        b_vim_g_gg: b_vim_g_gg {
             compatible = "zmk,behavior-tap-dance";
-            label = "VIM_GG";
+            label = "B_VIM_G_GG";
             #binding-cells = <0>;
-            bindings = <&kp G>, <&kp LG(UP_ARROW)>;
-        };
-
-        vim_G: vim_G {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VIM_G";
-            bindings = <&vim_gg>, <&kp RG(UP_ARROW)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
+            bindings = <&kp LG(DOWN_ARROW)>, <&kp LG(UP_ARROW)>;
         };
 
         to_vim: to_vim {
@@ -97,13 +65,27 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        b_vim_y_yy: b_vim_y_yy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "B_VIM_Y_YY";
+            #binding-cells = <0>;
+            bindings = <&vim_y>, <&vim_yy>;
+        };
+
+        b_vim_d_dd: b_vim_d_dd {
+            compatible = "zmk,behavior-tap-dance";
+            label = "B_VIM_D_DD";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>, <&vim_dd>;
+        };
     };
 
     macros {
         vim_o: vim_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RG(RIGHT) &kp ENTER>;
+            bindings = <&kp RG(RIGHT) &kp RS(ENTER) &tog 7>;
             label = "VIM_O";
         };
 
@@ -114,11 +96,11 @@
             label = "VIM_W";
         };
 
-        vim_S: vim_S {
+        vim_shift_s: vim_shift_s {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RG(LEFT_ARROW) &kp RC(K)>;
-            label = "VIM_S";
+            label = "VIM_SHIFT_S";
         };
 
         vim_layer: vim_layer {
@@ -126,6 +108,55 @@
             #binding-cells = <0>;
             bindings = <&tog 7>;
             label = "VIM_LAYER";
+        };
+
+        vim_y: vim_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_SHIFT &kp LG(C)>;
+            label = "VIM_Y";
+        };
+
+        vim_yy: vim_yy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LG(LEFT_ARROW) &kp LG(LS(RIGHT)) &kp LG(C)>;
+            label = "VIM_YY";
+        };
+
+        vim_shift_o: vim_shift_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(LEFT) &kp RS(ENTER) &kp UP_ARROW &tog 7>;
+            label = "VIM_SHIFT_O";
+        };
+
+        vim_dd: vim_dd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT_ARROW) &kp RC(K)>;
+            label = "VIM_DD";
+        };
+
+        vim_s: vim_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DELETE &tog 7>;
+            label = "VIM_S";
+        };
+
+        vim_shift_i: vim_shift_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT_ARROW) &tog 7>;
+            label = "VIM_SHIFT_I";
+        };
+
+        vim_shift_a: vim_shift_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RIGHT) &tog 7>;
+            label = "VIM_SHIFT_A";
         };
     };
 
@@ -215,10 +246,19 @@
 
         vim_normal {
             bindings = <
-&trans  &trans  &vim_w      &kp RA(RIGHT)  &trans           &trans                &kp RG(C)       &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &trans
-&trans  &trans  &trans      &vim_d         &trans           &vim_G                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
-&trans  &trans  &kp DELETE  &trans         &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &trans          &trans          &trans        &key_repeat  &trans     &trans
+&trans  &trans  &vim_w      &kp RA(RIGHT)  &trans           &trans                &b_vim_y_yy     &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &trans
+&tog 7  &trans  &vim_s      &none          &trans           &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
+&mo 8   &trans  &kp DELETE  &trans         &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &trans          &trans          &trans        &key_repeat  &trans     &mo 8
                             &trans         &trans           &trans                &trans          &trans          &tog 7
+            >;
+        };
+
+        vim_shifted {
+            bindings = <
+&trans  &trans        &trans        &trans     &trans  &trans    &trans  &trans  &vim_shift_i  &vim_shift_o  &trans  &trans
+&trans  &vim_shift_a  &vim_shift_s  &kp RC(K)  &trans  &trans    &trans  &trans  &trans        &trans        &trans  &trans
+&trans  &trans        &trans        &trans     &trans  &trans    &trans  &trans  &trans        &trans        &trans  &trans
+                                    &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
