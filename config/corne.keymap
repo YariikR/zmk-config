@@ -247,7 +247,7 @@
         vim_normal {
             bindings = <
 &trans  &trans  &vim_w      &kp RA(RIGHT)  &trans           &trans                &b_vim_y_yy     &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &trans
-&tog 7  &trans  &vim_s      &none          &trans           &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
+&tog 7  &trans  &vim_s      &b_vim_d_dd    &trans           &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
 &mo 8   &trans  &kp DELETE  &trans         &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &trans          &trans          &trans        &key_repeat  &trans     &mo 8
                             &trans         &trans           &trans                &trans          &trans          &tog 7
             >;
