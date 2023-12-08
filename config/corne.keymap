@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -46,12 +47,86 @@
             bindings = <&tog 6>;
             key-positions = <0 1>;
         };
+
+        vim_toggle {
+            bindings = <&tog 7>;
+            key-positions = <10 11>;
+        };
     };
 
     behaviors {
+        vim_d: vim_d {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VIM_D";
+            bindings = <&kp RG(X)>, <&kp RC(K)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        vim_s: vim_s {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VIM_S";
+            bindings = <&kp DELETE>, <&vim_S>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        vim_gg: vim_gg {
+            compatible = "zmk,behavior-tap-dance";
+            label = "VIM_GG";
+            #binding-cells = <0>;
+            bindings = <&kp G>, <&kp LG(UP_ARROW)>;
+        };
+
+        vim_G: vim_G {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VIM_G";
+            bindings = <&vim_gg>, <&kp RG(UP_ARROW)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        to_vim: to_vim {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TO_VIM";
+            bindings = <&kp>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
+        vim_o: vim_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(RIGHT) &kp ENTER>;
+            label = "VIM_O";
+        };
+
+        vim_w: vim_w {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(RIGHT) &kp RA(RIGHT) &kp RA(LEFT)>;
+            label = "VIM_W";
+        };
+
+        vim_S: vim_S {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(LEFT_ARROW) &kp RC(K)>;
+            label = "VIM_S";
+        };
+
+        vim_layer: vim_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 7>;
+            label = "VIM_LAYER";
+        };
     };
 
     keymap {
@@ -65,10 +140,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 3 LEFT_BRACKET
-&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
-&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
+&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I                &kp O    &kp P     &lt 3 LEFT_BRACKET
+&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K                &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
+&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                        &kp COMMA            &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 1 SPACE    &lt 2 ENTER  &mt RIGHT_COMMAND BACKSPACE  &to_vim RIGHT_ALT 7
             >;
         };
 
@@ -80,10 +155,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7         &kp N8  &kp N9     &kp N0  &trans
-&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN       &kp UP  &kp RIGHT  &trans  &trans
-&trans           &key_repeat  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans         &trans  &trans     &trans  &trans
-                                              &trans        &trans          &trans       &trans    &kp BACKSPACE  &trans
+&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans           &key_repeat  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans  &trans
+                                              &trans        &trans          &trans       &trans    &trans    &trans
             >;
         };
 
@@ -135,6 +210,15 @@
 &trans  &kp H  &kp J  &kp K   &kp L   &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N  &kp M  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                       &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        vim_normal {
+            bindings = <
+&trans  &trans  &vim_w      &kp RA(RIGHT)  &trans           &trans                &kp RG(C)       &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &trans
+&trans  &trans  &trans      &vim_d         &trans           &vim_G                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
+&trans  &trans  &kp DELETE  &trans         &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &trans          &trans          &trans        &key_repeat  &trans     &trans
+                            &trans         &trans           &trans                &trans          &trans          &tog 7
             >;
         };
     };
