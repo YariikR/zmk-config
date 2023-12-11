@@ -74,7 +74,7 @@
             #binding-cells = <0>;
             bindings = <&vim_y>, <&vim_yy>;
 
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
         };
 
         b_vim_d_dd: b_vim_d_dd {
@@ -178,6 +178,13 @@
             bindings = <&kp RC(K) &tog 7>;
             label = "VIM_SHIFT_C";
         };
+
+        vim_shift_8: vim_shift_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(LEFT_ARROW) &kp RS(RA(RIGHT)) &kp LG(C) &kp LG(F)>;
+            label = "VIM_SHIFT_8";
+        };
     };
 
     keymap {
@@ -206,10 +213,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1       &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&kp LS(LC(TAB))  &kp LC(TAB)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans           &key_repeat  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans  &trans
-                                              &trans        &trans          &trans       &trans    &trans    &trans
+&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans           &kp LC(SPACE)  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans  &trans
+                                                &trans        &trans          &trans       &trans    &trans    &trans
             >;
         };
 
@@ -266,10 +273,10 @@
 
         vim_normal {
             bindings = <
-&none     &none  &vim_w      &kp RA(RIGHT)   &none            &none                 &b_vim_y_yy     &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &none
-&vim_esc  &none  &vim_s      &b_vim_d_dd     &none            &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &none      &none
-&mo 8     &none  &kp DELETE  &none           &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &none           &none           &none         &key_repeat  &none      &mo 8
-                             &kp LEFT_ARROW  &kp DOWN_ARROW   &trans                &kp DOWN_ARROW  &kp LEFT_ARROW  &tog 7
+&none     &none  &vim_w      &kp RA(RIGHT)   &none            &none                 &b_vim_y_yy       &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &none
+&vim_esc  &none  &vim_s      &b_vim_d_dd     &none            &b_vim_g_gg           &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &none      &none
+&mo 8     &none  &kp DELETE  &none           &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &kp ENTER         &none           &none         &key_repeat  &kp LG(F)  &mo 8
+                             &kp LEFT_ARROW  &kp DOWN_ARROW   &trans                &lt 9 DOWN_ARROW  &kp LEFT_ARROW  &tog 7
             >;
         };
 
@@ -279,6 +286,15 @@
 &none  &vim_shift_a  &vim_shift_s  &kp RC(K)     &none  &kp RG(DOWN_ARROW)    &none  &none  &none         &none         &none  &none
 &none  &none         &none         &vim_shift_c  &none  &none                 &none  &none  &none         &none         &none  &none
                                    &none         &none  &none                 &none  &none  &none
+            >;
+        };
+
+        vim_3 {
+            bindings = <
+&none  &none  &none  &none  &kp RG(RIGHT_ARROW)  &none    &kp RG(LEFT_ARROW)  &none  &vim_shift_8  &none  &none  &none
+&none  &none  &none  &none  &none                &none    &none               &none  &none         &none  &none  &none
+&none  &none  &none  &none  &none                &none    &none               &none  &none         &none  &none  &none
+                     &none  &none                &none    &none               &none  &none
             >;
         };
     };
