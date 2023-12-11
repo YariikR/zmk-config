@@ -54,7 +54,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "B_VIM_G_GG";
             #binding-cells = <0>;
-            bindings = <&kp LG(DOWN_ARROW)>, <&kp LG(UP_ARROW)>;
+            bindings = <&none>, <&kp RG(UP_ARROW)>;
+
+            tapping-term-ms = <400>;
         };
 
         to_vim: to_vim {
@@ -71,6 +73,8 @@
             label = "B_VIM_Y_YY";
             #binding-cells = <0>;
             bindings = <&vim_y>, <&vim_yy>;
+
+            tapping-term-ms = <400>;
         };
 
         b_vim_d_dd: b_vim_d_dd {
@@ -78,6 +82,8 @@
             label = "B_VIM_D_DD";
             #binding-cells = <0>;
             bindings = <&kp LG(X)>, <&vim_dd>;
+
+            tapping-term-ms = <400>;
         };
     };
 
@@ -99,7 +105,7 @@
         vim_shift_s: vim_shift_s {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RG(LEFT_ARROW) &kp RC(K)>;
+            bindings = <&kp RG(LEFT_ARROW) &kp RC(K) &tog 7>;
             label = "VIM_SHIFT_S";
         };
 
@@ -120,7 +126,7 @@
         vim_yy: vim_yy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kt LG(LEFT_ARROW) &kp LG(LS(RIGHT)) &kp LG(C)>;
+            bindings = <&kt LG(LEFT_ARROW) &kp LG(LS(RIGHT)) &kp LG(C) &kp LEFT_ARROW>;
             label = "VIM_YY";
         };
 
@@ -134,7 +140,7 @@
         vim_dd: vim_dd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LEFT_ARROW) &kp RC(K)>;
+            bindings = <&kp LG(LEFT_ARROW) &kp RC(K) &kp BACKSPACE>;
             label = "VIM_DD";
         };
 
@@ -157,6 +163,20 @@
             #binding-cells = <0>;
             bindings = <&kp LG(RIGHT) &tog 7>;
             label = "VIM_SHIFT_A";
+        };
+
+        vim_esc: vim_esc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt RIGHT_SHIFT &kp RIGHT_ARROW>;
+            label = "VIM_ESC";
+        };
+
+        vim_shift_c: vim_shift_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RC(K) &tog 7>;
+            label = "VIM_SHIFT_C";
         };
     };
 
@@ -246,19 +266,19 @@
 
         vim_normal {
             bindings = <
-&trans  &trans  &vim_w      &kp RA(RIGHT)  &trans           &trans                &b_vim_y_yy     &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &trans
-&tog 7  &trans  &vim_s      &b_vim_d_dd    &trans           &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &trans     &trans
-&mo 8   &trans  &kp DELETE  &trans         &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &trans          &trans          &trans        &key_repeat  &trans     &mo 8
-                            &trans         &trans           &trans                &trans          &trans          &tog 7
+&none     &none  &vim_w      &kp RA(RIGHT)   &none            &none                 &b_vim_y_yy     &kp RG(Z)       &tog 7        &vim_o       &kp RG(V)  &none
+&vim_esc  &none  &vim_s      &b_vim_d_dd     &none            &b_vim_g_gg           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT    &none      &none
+&mo 8     &none  &kp DELETE  &none           &kt RIGHT_SHIFT  &kp RA(LEFT_ARROW)    &none           &none           &none         &key_repeat  &none      &mo 8
+                             &kp LEFT_ARROW  &kp DOWN_ARROW   &trans                &kp DOWN_ARROW  &kp LEFT_ARROW  &tog 7
             >;
         };
 
         vim_shifted {
             bindings = <
-&trans  &trans        &trans        &trans     &trans  &trans    &trans  &trans  &vim_shift_i  &vim_shift_o  &trans  &trans
-&trans  &vim_shift_a  &vim_shift_s  &kp RC(K)  &trans  &trans    &trans  &trans  &trans        &trans        &trans  &trans
-&trans  &trans        &trans        &trans     &trans  &trans    &trans  &trans  &trans        &trans        &trans  &trans
-                                    &trans     &trans  &trans    &trans  &trans  &trans
+&none  &none         &none         &none         &none  &none                 &none  &none  &vim_shift_i  &vim_shift_o  &none  &none
+&none  &vim_shift_a  &vim_shift_s  &kp RC(K)     &none  &kp RG(DOWN_ARROW)    &none  &none  &none         &none         &none  &none
+&none  &none         &none         &vim_shift_c  &none  &none                 &none  &none  &none         &none         &none  &none
+                                   &none         &none  &none                 &none  &none  &none
             >;
         };
     };
