@@ -185,6 +185,27 @@
             bindings = <&kp RA(LEFT_ARROW) &kp RS(RA(RIGHT)) &kp LG(C) &kp LG(F)>;
             label = "VIM_SHIFT_8";
         };
+
+        bottom_line: bottom_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(RIGHT) &kp RS(ENTER)>;
+            label = "BOTTOM_LINE";
+        };
+
+        top_line: top_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(LEFT) &kp RS(ENTER) &kp UP_ARROW>;
+            label = "TOP_LINE";
+        };
+
+        delete_line: delete_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(LEFT_ARROW) &kp RC(K)>;
+            label = "DELETE_LINE";
+        };
     };
 
     keymap {
@@ -213,10 +234,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans           &kp LC(SPACE)  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &trans    &trans    &trans  &trans     &trans  &trans
-                                                &trans        &trans          &trans       &trans    &trans    &trans
+&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6        &kp N7        &kp N8     &kp N9     &kp N0  &trans
+&kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT      &kp DOWN      &kp UP     &kp RIGHT  &trans  &trans
+&trans           &kp LC(SPACE)  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END      &delete_line  &bottom_line  &top_line  &kp RC(K)  &trans  &trans
+                                                &trans        &trans          &trans       &trans        &trans        &trans
             >;
         };
 
@@ -228,10 +249,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-&kp TILDE  &kp LBKT  &kp RBKT  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT
-&trans     &trans    &trans    &trans    &trans    &trans       &kp UNDER  &kp PLUS   &trans           &trans    &kp BSLH  &kp PIPE
-                               &trans    &trans    &trans       &trans     &trans     &trans
+&kp GRAVE  &kp EXCL  &kp AT      &kp HASH  &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+&kp TILDE  &kp LBKT  &kp RBKT    &trans    &vim_shift_8  &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT
+&trans     &trans    &kp DELETE  &trans    &trans        &trans       &kp UNDER  &kp PLUS   &trans           &trans    &kp BSLH  &kp PIPE
+                                 &trans    &trans        &trans       &trans     &trans     &trans
             >;
         };
 
