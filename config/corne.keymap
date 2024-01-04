@@ -50,126 +50,14 @@
     };
 
     behaviors {
-        b_vim_g_gg: b_vim_g_gg {
-            compatible = "zmk,behavior-tap-dance";
-            label = "B_VIM_G_GG";
-            #binding-cells = <0>;
-            bindings = <&none>, <&kp RG(UP_ARROW)>;
-
-            tapping-term-ms = <400>;
-        };
-
-        to_vim: to_vim {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TO_VIM";
-            bindings = <&kp>, <&tog>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        b_vim_y_yy: b_vim_y_yy {
-            compatible = "zmk,behavior-tap-dance";
-            label = "B_VIM_Y_YY";
-            #binding-cells = <0>;
-            bindings = <&vim_y>, <&copy_line>;
-
-            tapping-term-ms = <300>;
-        };
-
-        b_vim_d_dd: b_vim_d_dd {
-            compatible = "zmk,behavior-tap-dance";
-            label = "B_VIM_D_DD";
-            #binding-cells = <0>;
-            bindings = <&kp LG(X)>, <&vim_dd>;
-
-            tapping-term-ms = <400>;
-        };
     };
 
     macros {
-        vim_o: vim_o {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(RIGHT) &kp RS(ENTER) &tog 0>;
-            label = "VIM_O";
-        };
-
-        vim_w: vim_w {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(RIGHT) &kp RA(RIGHT) &kp RA(LEFT)>;
-            label = "VIM_W";
-        };
-
-        vim_shift_s: vim_shift_s {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(LEFT_ARROW) &kp RC(K) &tog 0>;
-            label = "VIM_SHIFT_S";
-        };
-
-        vim_y: vim_y {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt RIGHT_SHIFT &kp LG(C)>;
-            label = "VIM_Y";
-        };
-
         copy_line: copy_line {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LG(LEFT_ARROW) &kp LG(LS(RIGHT)) &kp LG(C) &kp LEFT_ARROW>;
             label = "COPY_LINE";
-        };
-
-        vim_shift_o: vim_shift_o {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(LEFT) &kp RS(ENTER) &kp UP_ARROW &tog 0>;
-            label = "VIM_SHIFT_O";
-        };
-
-        vim_dd: vim_dd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LEFT_ARROW) &kp RC(K) &kp BACKSPACE>;
-            label = "VIM_DD";
-        };
-
-        vim_s: vim_s {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DELETE &tog 0>;
-            label = "VIM_S";
-        };
-
-        vim_shift_i: vim_shift_i {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LEFT_ARROW) &tog 0>;
-            label = "VIM_SHIFT_I";
-        };
-
-        vim_shift_a: vim_shift_a {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(RIGHT) &tog 0>;
-            label = "VIM_SHIFT_A";
-        };
-
-        vim_esc: vim_esc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt RIGHT_SHIFT &kp RIGHT_ARROW>;
-            label = "VIM_ESC";
-        };
-
-        vim_shift_c: vim_shift_c {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RC(K) &tog 0>;
-            label = "VIM_SHIFT_C";
         };
 
         find_word: find_word {
@@ -281,10 +169,10 @@
 
         System {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11    &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
-&trans  &kp F4  &kp F5  &kp F6  &kp F12  &trans     &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &kp C_SLEEP
-&trans  &kp F1  &kp F2  &kp F3  &trans   &trans     &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &kp C_AC_HOME
-                        &trans  &trans   &trans     &trans          &trans                &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &kp C_SLEEP
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &kp C_AC_HOME
+                          &trans   &trans   &trans     &trans          &trans                &trans
             >;
         };
 
