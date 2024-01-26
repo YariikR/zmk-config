@@ -108,8 +108,8 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LA(LC(RIGHT_GUI)) F13        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 2 LEFT_BRACKET
-&mt LA(LC(LG(RIGHT_SHIFT))) ESC  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
+&mt LA(LC(RIGHT_GUI)) ESC        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 2 LEFT_BRACKET
+&mt LA(LC(LG(RIGHT_SHIFT))) F13  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
 &kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                                                &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 5 SPACE    &lt 1 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
             >;
