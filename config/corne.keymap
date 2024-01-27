@@ -165,9 +165,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC          &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6           &kp N7        &kp N8     &kp N9     &kp N0        &trans
+&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6           &kp N7        &kp N8     &kp N9     &kp N0        &trans
 &kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT         &kp DOWN      &kp UP     &kp RIGHT  &delete_line  &delete_full_line
-&kp LEFT_SHIFT   &kp LC(SPACE)  &kp DELETE      &tog 3        &tog 4          &trans       &delete_to_left  &bottom_line  &top_line  &kp RC(K)  &copy_line    &select_all_copy
+&kp LEFT_SHIFT   &kp LC(SPACE)  &kp DELETE      &tog 3        &tog 4          &kp ESC      &delete_to_left  &bottom_line  &top_line  &kp RC(K)  &copy_line    &select_all_copy
                                                 &trans        &trans          &trans       &trans           &trans        &trans
             >;
         };
