@@ -108,10 +108,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E                   &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 2 LEFT_BRACKET
-&mt LA(LC(LG(RIGHT_SHIFT))) F13  &kp A  &kp S  &kp D                   &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
-&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C                   &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                               &mt LEFT_ALT BACKSPACE  &mt LEFT_GUI ENTER  &lt 5 SPACE    &lt 1 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
+&mt LA(LC(RIGHT_GUI)) TAB        &kp Q  &kp W  &kp E             &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &lt 2 LEFT_BRACKET
+&mt LA(LC(LG(RIGHT_SHIFT))) F13  &kp A  &kp S  &kp D             &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
+&kp LEFT_SHIFT                   &kp Z  &kp X  &kp C             &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                               &mt LEFT_ALT ESC  &mt LEFT_GUI ENTER  &lt 5 SPACE    &lt 1 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
             >;
         };
 
@@ -123,10 +123,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT      &kp HASH  &kp DLLR    &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-&kp TILDE  &kp LBKT  &kp RBKT    &trans    &find_word  &trans       &kp PLUS   &kp MINUS  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT
-&trans     &trans    &kp DELETE  &trans    &trans      &trans       &kp EQUAL  &kp UNDER  &trans           &trans    &kp BSLH  &kp PIPE
-                                 &trans    &trans      &trans       &trans     &trans     &trans
+&kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR    &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+&kp TILDE  &kp LBKT  &kp RBKT  &trans    &find_word  &trans       &kp PLUS   &kp MINUS  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT
+&trans     &trans    &trans    &trans    &trans      &trans       &kp EQUAL  &kp UNDER  &trans           &trans    &kp BSLH  &kp PIPE
+                               &trans    &trans      &trans       &trans     &trans     &trans
             >;
         };
 
@@ -165,10 +165,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5       &kp N6           &kp N7        &kp N8     &kp N9     &kp N0        &trans
-&kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT    &kp LEFT         &kp DOWN      &kp UP     &kp RIGHT  &delete_line  &delete_full_line
-&kp LEFT_SHIFT   &kp LC(SPACE)  &kp DELETE      &tog 3        &tog 4          &kp ESC      &delete_to_left  &bottom_line  &top_line  &kp RC(K)  &copy_line    &select_all_copy
-                                                &trans        &trans          &trans       &trans           &trans        &trans
+&kp LG(GRAVE)    &kp N1         &kp N2          &kp N3        &kp N4          &kp N5        &kp N6           &kp N7        &kp N8     &kp N9     &kp N0        &trans
+&kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT     &kp LEFT         &kp DOWN      &kp UP     &kp RIGHT  &delete_line  &delete_full_line
+&kp LEFT_SHIFT   &kp LC(SPACE)  &kp BACKSPACE   &tog 3        &tog 4          &kp DELETE    &delete_to_left  &bottom_line  &top_line  &kp RC(K)  &copy_line    &select_all_copy
+                                                &kp F16       &kp F17         &trans        &trans           &trans        &trans
             >;
         };
 
