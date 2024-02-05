@@ -40,6 +40,11 @@
             bindings = <&bt BT_SEL 2>;
             key-positions = <28 29>;
         };
+
+        NUM {
+            bindings = <&Num_Layer_RGB>;
+            key-positions = <36 37>;
+        };
     };
 
     macros {
@@ -97,6 +102,13 @@
             #binding-cells = <0>;
             bindings = <&kp LG(A) &kp LG(C) &kp RIGHT>;
             label = "SELECT_ALL_COPY";
+        };
+
+        Num_Layer_RGB: Num_Layer_RGB {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 3 &rgb_ug RGB_TOG>;
+            label = "NUM_LAYER_RGB";
         };
     };
 
@@ -171,16 +183,16 @@
 &kp LG(GRAVE)    &kp N1         &kp N2           &kp N3         &kp N4          &kp N5       &kp N6    &kp N7        &kp N8     &kp N9     &kp N0        &trans
 &kp LS(LC(TAB))  &kp LC(TAB)    &kp LEFT_ARROW   &kp UP_ARROW   &kp DOWN_ARROW  &kp RIGHT    &kp LEFT  &kp DOWN      &kp UP     &kp RIGHT  &delete_line  &delete_full_line
 &kp LEFT_SHIFT   &kp LC(SPACE)  &delete_to_left  &kp BACKSPACE  &kp DELETE      &kp RC(K)    &trans    &bottom_line  &top_line  &trans     &copy_line    &select_all_copy
-                                                 &kp F16        &kp F17         &trans       &trans    &trans        &trans
+                                                 &trans         &trans          &trans       &trans    &trans        &trans
             >;
         };
 
         System {
             bindings = <
-&rgb_ug RGB_TOG                    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &kp C_POWER
-&rgb_ug RGB_COLOR_HSB(126,100,50)  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &kp C_SLEEP
-&rgb_ug RGB_COLOR_HSB(284,67,44)   &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &kp C_AC_HOME
-                                                     &trans   &trans   &trans     &trans          &trans                &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &trans
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &rgb_ug RGB_HUD
+                          &trans   &trans   &trans     &trans          &trans                &trans
             >;
         };
     };
