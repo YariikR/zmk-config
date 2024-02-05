@@ -42,7 +42,7 @@
         };
 
         NUM {
-            bindings = <&Num_Layer_RGB>;
+            bindings = <&tog 3>;
             key-positions = <36 37>;
         };
     };
@@ -102,13 +102,6 @@
             #binding-cells = <0>;
             bindings = <&kp LG(A) &kp LG(C) &kp RIGHT>;
             label = "SELECT_ALL_COPY";
-        };
-
-        Num_Layer_RGB: Num_Layer_RGB {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 3 &rgb_ug RGB_TOG>;
-            label = "NUM_LAYER_RGB";
         };
     };
 
