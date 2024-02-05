@@ -177,9 +177,9 @@
 
         System {
             bindings = <
-&rgb_ug RGB_TOG                    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &trans  &kp C_POWER
-&rgb_ug RGB_COLOR_HSB(126,100,50)  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &trans  &kp C_SLEEP
-&trans                             &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &trans  &kp C_AC_HOME
+&rgb_ug RGB_TOG                    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &kp C_POWER
+&rgb_ug RGB_COLOR_HSB(126,100,50)  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &kp C_SLEEP
+&rgb_ug RGB_COLOR_HSB(284,67,44)   &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &kp C_AC_HOME
                                                      &trans   &trans   &trans     &trans          &trans                &trans
             >;
         };
