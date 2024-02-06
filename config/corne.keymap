@@ -40,6 +40,21 @@
             bindings = <&bt BT_SEL 2>;
             key-positions = <28 29>;
         };
+
+        num_toggle {
+            bindings = <&to_num_lay>;
+            key-positions = <13 14>;
+        };
+
+        right_side_toggle {
+            bindings = <&to_right_side>;
+            key-positions = <1 2>;
+        };
+
+        cmd_backspace {
+            bindings = <&delete_combo>;
+            key-positions = <25 26>;
+        };
     };
 
     macros {
@@ -97,6 +112,31 @@
             #binding-cells = <0>;
             bindings = <&kp LG(A) &kp LG(C) &kp RIGHT>;
             label = "SELECT_ALL_COPY";
+        };
+
+        to_num_lay: to_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 3 &rgb_ug RGB_COLOR_HSB(109,100,50) &rgb_ug RGB_TOG>;
+            label = "TO_NUM";
+        };
+
+        to_right_side: to_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 4 &rgb_ug RGB_COLOR_HSB(42,100,50) &rgb_ug RGB_TOG>;
+            label = "TO_RIGHT";
+        };
+
+        delete_combo: delete_combo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RG(BACKSPACE) &rgb_ug RGB_COLOR_HSB(0,100,50) &rgb_ug RGB_TOG>,
+                <&macro_wait_time 1>,
+                <&rgb_ug RGB_TOG>;
+
+            label = "DELETE_COMBO";
         };
     };
 
@@ -177,10 +217,10 @@
 
         System {
             bindings = <
-&rgb_ug RGB_TOG  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &trans
-&trans           &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI
-&trans           &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &rgb_ug RGB_HUD
-                                   &trans   &trans   &trans     &trans          &trans                &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &rgb_ug RGB_COLOR_HSB(0,100,50)
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &rgb_ug RGB_HUD
+                          &trans   &trans   &trans     &trans          &trans                &trans
             >;
         };
     };
