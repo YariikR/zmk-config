@@ -28,32 +28,32 @@
 
         BT1 {
             bindings = <&bt BT_SEL 0>;
-            key-positions = <4 5>;
+            key-positions = <1 2>;
         };
 
         BT2 {
             bindings = <&bt BT_SEL 1>;
-            key-positions = <16 17>;
+            key-positions = <14 13>;
         };
 
         BT3 {
             bindings = <&bt BT_SEL 2>;
-            key-positions = <28 29>;
+            key-positions = <25 26>;
         };
 
         num_toggle {
             bindings = <&to_num_lay>;
-            key-positions = <13 14>;
+            key-positions = <16 17>;
         };
 
         right_side_toggle {
             bindings = <&to_right_side>;
-            key-positions = <1 2>;
+            key-positions = <5 4>;
         };
 
         cmd_backspace {
             bindings = <&delete_combo>;
-            key-positions = <25 26>;
+            key-positions = <28 29>;
         };
     };
 
@@ -133,7 +133,7 @@
             #binding-cells = <0>;
             bindings =
                 <&kp RG(BACKSPACE) &rgb_ug RGB_COLOR_HSB(0,100,50) &rgb_ug RGB_TOG>,
-                <&macro_wait_time 1>,
+                <&macro_wait_time 1000>,
                 <&rgb_ug RGB_TOG>;
 
             label = "DELETE_COMBO";
