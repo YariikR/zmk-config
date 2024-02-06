@@ -52,7 +52,7 @@
         };
 
         cmd_backspace {
-            bindings = <&delete_combo>;
+            bindings = <&del_combo_main>;
             key-positions = <28 29>;
         };
     };
@@ -128,15 +128,19 @@
             label = "TO_RIGHT";
         };
 
-        delete_combo: delete_combo {
+        del_combo_start: delete_combo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp RG(BACKSPACE) &rgb_ug RGB_COLOR_HSB(0,100,50) &rgb_ug RGB_TOG>,
-                <&macro_wait_time 1000>,
-                <&rgb_ug RGB_TOG>;
-
+            bindings = <&kp RG(BACKSPACE) &rgb_ug RGB_COLOR_HSB(0,100,50) &rgb_ug RGB_TOG>;
             label = "DELETE_COMBO";
+        };
+
+        del_combo_main: del_combo_main {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&del_combo_start &rgb_ug RGB_TOG>;
+            label = "DEL_COMBO_MAIN";
+            wait-ms = <1000>;
         };
     };
 
