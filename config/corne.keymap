@@ -26,21 +26,6 @@
             key-positions = <12 23>;
         };
 
-        BT1 {
-            bindings = <&bt BT_SEL 0>;
-            key-positions = <1 2>;
-        };
-
-        BT2 {
-            bindings = <&bt BT_SEL 1>;
-            key-positions = <14 13>;
-        };
-
-        BT3 {
-            bindings = <&bt BT_SEL 2>;
-            key-positions = <25 26>;
-        };
-
         num_toggle {
             bindings = <&to_num_lay>;
             key-positions = <16 17>;
@@ -52,7 +37,7 @@
         };
 
         cmd_backspace {
-            bindings = <&del_combo_main>;
+            bindings = <&kp LG(BACKSPACE)>;
             key-positions = <28 29>;
         };
     };
@@ -127,21 +112,6 @@
             bindings = <&tog 4 &rgb_ug RGB_COLOR_HSB(42,100,50) &rgb_ug RGB_TOG>;
             label = "TO_RIGHT";
         };
-
-        del_combo_start: delete_combo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(BACKSPACE) &rgb_ug RGB_COLOR_HSB(0,100,50) &rgb_ug RGB_TOG>;
-            label = "DELETE_COMBO";
-        };
-
-        del_combo_main: del_combo_main {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&del_combo_start &rgb_ug RGB_TOG>;
-            label = "DEL_COMBO_MAIN";
-            wait-ms = <1000>;
-        };
     };
 
     keymap {
@@ -197,8 +167,8 @@
 
         Right_Side {
             bindings = <
-&none   &kp Y  &kp U  &kp I   &kp O   &kp P     &none  &none  &none  &none  &none  &none
-&none   &kp H  &kp J  &kp K   &kp L   &none     &none  &none  &none  &none  &none  &none
+&trans  &kp Y  &kp U  &kp I   &kp O   &kp P     &none  &none  &none  &none  &none  &none
+&trans  &kp H  &kp J  &kp K   &kp L   &none     &none  &none  &none  &none  &none  &none
 &trans  &kp N  &kp M  &none   &none   &none     &none  &none  &none  &none  &none  &none
                       &trans  &trans  &trans    &none  &none  &none
             >;
