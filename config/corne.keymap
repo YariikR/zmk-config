@@ -127,10 +127,10 @@
 
         Numpad {
             bindings = <
-&kp COMMA   &kp NUMBER_1  &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans
-&kp PERIOD  &kp NUMBER_6  &kp NUMBER_7     &kp N8        &kp NUMBER_9  &kp NUMBER_0    &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
-&kp PRCNT   &kp PLUS      &kp KP_MULTIPLY  &kp EQUAL     &kp MINUS     &kp FSLH        &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans
-                                           &trans        &trans        &trans          &trans   &trans   &trans
+&kp COMMA   &kp NUMBER_1  &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &trans          &trans          &trans        &trans           &trans            &kp RIGHT_BRACKET
+&kp PERIOD  &kp NUMBER_6  &kp NUMBER_7     &kp N8        &kp NUMBER_9  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RS(NUMBER_6)  &trans
+&kp PRCNT   &kp PLUS      &kp KP_MULTIPLY  &kp EQUAL     &kp MINUS     &kp FSLH        &trans          &trans          &kp FSLH      &kp RS(FSLH)     &kp RS(N7)        &trans
+                                           &trans        &trans        &trans          &trans          &trans          &trans
             >;
         };
 
