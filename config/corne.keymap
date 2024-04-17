@@ -160,8 +160,8 @@
             bindings = <
 &kp LG(GRAVE)    &delete_full_line  &delete_line     &top_line      &bottom_line    &copy_line          &kp EXCL  &kp HASH   &kp DLLR      &kp LPAR   &kp RPAR  &kp RBKT
 &kp LS(LC(TAB))  &kp LC(TAB)        &kp LEFT_ARROW   &kp UP_ARROW   &kp DOWN_ARROW  &kp RIGHT           &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT  &kp AT    &kp AMPERSAND
-&kp LEFT_SHIFT   &kp LC(SPACE)      &delete_to_left  &kp BACKSPACE  &kp DELETE      &delete_to_right    &kp LBRC  &kp UNDER  &kp CARET     &kp RBRC   &kp BSLH  &kp PIPE
-                                                     &trans         &trans          &trans              &trans    &trans     &trans
+&kp LEFT_SHIFT   &kp SPACE          &delete_to_left  &kp BACKSPACE  &kp DELETE      &delete_to_right    &kp LBRC  &kp UNDER  &kp CARET     &kp RBRC   &kp BSLH  &kp PIPE
+                                                     &kp LC(SPACE)  &trans          &trans              &trans    &trans     &trans
             >;
         };
 
