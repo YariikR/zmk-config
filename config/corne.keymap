@@ -134,10 +134,10 @@
 
         Numpad {
             bindings = <
-&kp COMMA   &kp NUMBER_1  &kp NUMBER_2     &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp GRAVE       &kp TILDE       &trans        &trans           &trans            &kp RIGHT_BRACKET
-&kp PERIOD  &kp NUMBER_6  &kp NUMBER_7     &kp N8        &kp NUMBER_9  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RS(NUMBER_6)  &trans
-&kp PRCNT   &kp PLUS      &kp KP_MULTIPLY  &kp EQUAL     &kp MINUS     &kp FSLH        &trans          &trans          &kp FSLH      &kp RS(FSLH)     &kp RS(N7)        &trans
-                                           &trans        &trans        &trans          &trans          &trans          &trans
+&kp COMMA   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5       &kp GRAVE       &kp TILDE       &trans        &trans           &trans            &kp RIGHT_BRACKET
+&kp PERIOD  &kp NUMBER_6  &kp NUMBER_7  &kp N8        &kp NUMBER_9  &kp NUMBER_0       &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp RS(NUMBER_6)  &trans
+&kp PRCNT   &kp MINUS     &kp FSLH      &kp EQUAL     &kp PLUS      &kp KP_MULTIPLY    &trans          &trans          &kp FSLH      &kp RS(FSLH)     &kp RS(N7)        &trans
+                                        &trans        &trans        &trans             &trans          &trans          &trans
             >;
         };
 
@@ -158,10 +158,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LG(GRAVE)    &delete_full_line  &delete_line     &top_line      &bottom_line    &copy_line          &kp EXCL  &kp HASH   &kp DLLR      &kp LPAR       &kp RPAR        &kp RBKT
-&kp LS(LC(TAB))  &kp LC(TAB)        &kp LEFT_ARROW   &kp UP_ARROW   &kp DOWN_ARROW  &kp RIGHT           &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp LEFT_BRACE  &kp RIGHT_BRACE
-&kp LEFT_SHIFT   &kp LC(SPACE)      &delete_to_left  &kp BACKSPACE  &kp DELETE      &delete_to_right    &kp AT    &kp UNDER  &kp CARET     &kp AMPERSAND  &kp BSLH        &kp PIPE
-                                                     &trans         &trans          &trans              &trans    &trans     &trans
+&kp LG(GRAVE)   &top_line      &kp LG(LEFT_ARROW)  &kp LA(LEFT_ARROW)  &kp LA(RIGHT)   &kp LG(RIGHT_ARROW)    &kp EXCL  &kp HASH   &kp DLLR      &kp LPAR       &kp RPAR        &kp RBKT
+&kp LEFT_SHIFT  &bottom_line   &kp LEFT_ARROW      &kp UP_ARROW        &kp DOWN_ARROW  &kp RIGHT              &kp LEFT  &kp DOWN   &kp UP_ARROW  &kp RIGHT      &kp LEFT_BRACE  &kp RIGHT_BRACE
+&kp LEFT_SHIFT  &kp LC(SPACE)  &delete_to_left     &kp BACKSPACE       &kp DELETE      &delete_to_right       &kp AT    &kp UNDER  &kp CARET     &kp AMPERSAND  &kp BSLH        &kp PIPE
+                                                   &trans              &trans          &trans                 &trans    &trans     &trans
             >;
         };
 
