@@ -38,6 +38,11 @@
 
         cmd_backspace {
             bindings = <&kp LG(BACKSPACE)>;
+            key-positions = <36 37>;
+        };
+
+        to_default_clear {
+            bindings = <&tog 1>;
             key-positions = <28 29>;
         };
     };
@@ -95,14 +100,14 @@
         to_num_lay: to_num {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 1 &rgb_ug RGB_COLOR_HSB(109,100,50) &rgb_ug RGB_TOG>;
+            bindings = <&tog 2 &rgb_ug RGB_COLOR_HSB(109,100,50) &rgb_ug RGB_TOG>;
             label = "TO_NUM";
         };
 
         to_right_side: to_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 2 &rgb_ug RGB_COLOR_HSB(42,100,50) &rgb_ug RGB_TOG>;
+            bindings = <&tog 3 &rgb_ug RGB_COLOR_HSB(42,100,50) &rgb_ug RGB_TOG>;
             label = "TO_RIGHT";
         };
 
@@ -128,7 +133,16 @@
 &mt LA(LC(RIGHT_GUI)) TAB              &kp Q  &kp W  &kp E             &kp R               &kp T          &kp Y        &kp U                        &kp I          &kp O    &kp P     &kp LEFT_BRACKET
 &mt LA(LC(LG(RIGHT_SHIFT))) LA(SPACE)  &kp A  &kp S  &kp D             &kp F               &kp G          &kp H        &kp J                        &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
 &kp LEFT_SHIFT                         &kp Z  &kp X  &kp C             &kp V               &kp B          &kp N        &kp M                        &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                                     &mt LEFT_ALT ESC  &mt LEFT_GUI ENTER  &lt 3 SPACE    &lt 1 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
+                                                     &mt LEFT_ALT ESC  &mt LEFT_GUI ENTER  &lt 4 SPACE    &lt 2 ENTER  &mt RIGHT_COMMAND BACKSPACE  &kp RIGHT_ALT
+            >;
+        };
+
+        default_layer_clear {
+            bindings = <
+&kp TAB         &kp Q  &kp W  &kp E         &kp R         &kp T        &kp Y      &kp U              &kp I          &kp O    &kp P     &kp LEFT_BRACKET
+&kp ESC         &kp A  &kp S  &kp D         &kp F         &kp G        &kp H      &kp J              &kp K          &kp L    &kp SEMI  &mt RIGHT_CONTROL SQT
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C         &kp V         &kp B        &kp N      &kp M              &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                              &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE    &kp ENTER  &kp RIGHT_COMMAND  &kp RIGHT_ALT
             >;
         };
 
@@ -143,10 +157,10 @@
 
         Right_Side {
             bindings = <
-&trans  &kp Y  &kp U  &kp I   &kp O          &kp P            &none  &none  &none  &none  &none  &none
-&trans  &kp H  &kp J  &kp K   &kp L          &none            &none  &none  &none  &none  &none  &none
-&trans  &kp N  &kp M  &none   &kp LG(MINUS)  &kp LG(EQUAL)    &none  &none  &none  &none  &none  &none
-                      &trans  &kp LG(SPACE)  &kp SPACE        &none  &none  &none
+&bt BT_SEL 2  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5     &none  &none  &none  &none  &none  &none
+&bt BT_SEL 1  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &none  &none  &none  &none  &none  &none
+&bt BT_SEL 0  &kp F11  &kp F12  &none   &trans  &trans     &none  &none  &none  &none  &none  &none
+                                &trans  &trans  &trans     &none  &none  &none
             >;
         };
 
@@ -179,8 +193,8 @@
         compatible = "zmk,conditional-layers";
 
         system {
-            if-layers = <3 1>;
-            then-layer = <4>;
+            if-layers = <4 2>;
+            then-layer = <5>;
         };
     };
 };
