@@ -157,10 +157,10 @@
 
         Right_Side {
             bindings = <
-&bt BT_SEL 2  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5       &none      &none  &none  &none  &none  &none
-&bt BT_SEL 1  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10      &none      &none  &none  &none  &none  &none
-&bt BT_SEL 0  &kp F11  &kp F12  &none   &trans  &soft_off    &soft_off  &none  &none  &none  &none  &none
-                                &trans  &trans  &trans       &none      &none  &none
+&bt BT_SEL 2  &kp F1   &kp F2   &kp F3  &kp F4                            &kp F5             &none   &none  &none  &none  &none  &none
+&bt BT_SEL 1  &kp F6   &kp F7   &kp F8  &kp F9                            &kp F10            &none   &none  &none  &none  &none  &none
+&bt BT_SEL 0  &kp F11  &kp F12  &none   &rgb_ug RGB_COLOR_HSB(186,89,53)  &rgb_ug RGB_TOG    &trans  &none  &none  &none  &none  &none
+                                &trans  &trans                            &trans             &none   &none  &none
             >;
         };
 
@@ -183,8 +183,8 @@
             bindings = <
 &bt BT_SEL 2  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &trans          &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans      &rgb_ug RGB_TOG  &rgb_ug RGB_COLOR_HSB(0,100,50)
 &bt BT_SEL 1  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp C_PREVIOUS  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI
-&bt BT_SEL 0  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &soft_off   &rgb_ug RGB_BRD  &rgb_ug RGB_HUD
-                                &trans   &trans   &trans     &trans          &trans                &trans
+&bt BT_SEL 0  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans          &kp K_MUTE            &kp C_PP              &trans      &rgb_ug RGB_BRD  &rgb_ug RGB_HUD
+                                &trans   &trans   &trans     &trans          &trans                &soft_off
             >;
         };
     };
